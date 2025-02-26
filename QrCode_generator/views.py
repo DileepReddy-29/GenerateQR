@@ -62,28 +62,32 @@ def qr_generator(request):
 
 def signup(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        confirmpassword = request.POST['confirmpassword']
-        email = request.POST['email']
-        if User.objects.filter(email=email).exists():
-            return render(request, 'signup.html')
-        if password != confirmpassword:
-            return render(request, 'signup.html')
-        User.objects.create_user(username, email, password)
-        return redirect('signin')
+    #     username = request.POST['username']
+    #     password = request.POST['password']
+    #     confirmpassword = request.POST['confirmpassword']
+    #     email = request.POST['email']
+    #     if User.objects.filter(email=email).exists():
+    #         return render(request, 'signup.html')
+    #     if password != confirmpassword:
+    #         return render(request, 'signup.html')
+    #     User.objects.create_user(username, email, password)
+    #     return redirect('signin')
+        return redirect('qr_generator')
+
     return render(request, 'signup.html')
+    
 
 def signin(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('qr_generator')
-        else:
-            return render(request, 'signin.html')
+        # username = request.POST['username']
+        # password = request.POST['password']
+        # user = authenticate(username=username, password=password)
+        # if user is not None:
+        #     login(request, user)
+        #     return redirect('qr_generator')
+        # else:
+        #     return render(request, 'signin.html')
+        return redirect('qr_generator')
     return render(request, 'signin.html')
 
 def signout(request):
