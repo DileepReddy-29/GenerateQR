@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% block content %}
+    
+    <body>
+        <!-- QR code form -->
+        <div class="container mt-5 align-items-center text-center" >
+            <h1>{{ company_name }}</h1>
+            <!-- Added "data:image/png;base64 , " to the src attribute to display the image and in place of qr_code previous is qr_url -->
+            <img src="data:image/png;base64, {{ qr_code }}" alt="QR Code" class="img-fluid" style="border: 2px solid #d3d3d3; padding: 20px; border-radius: 10px;">
+            <h3>Scan the QR to open {{ company_name }}</h3>
+            <div class="container">
+                <a href="data:image/png;base64,{{ qr_code }}" download = "{{ file_name }}"class = "btn btn-primary mt-3">Download QR</a>
+            </div>
+            <div class="container">
+                <a href="{% url 'qr_generator' %}" class = "btn btn-primary mt-3">Go Back</a>
+            </div>
+        </div>
+        
+    </body>
+{% endblock content %}

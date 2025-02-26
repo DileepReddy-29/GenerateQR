@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+    
+    <body>
+        <!-- QR code form -->
+        <div class="container mt-5" style="width: 600px; border: 1px solid #d3d3d3; padding: 20px; border-radius: 10px;">
+        <form action="{% url 'qr_generator' %}" method = "POST">
+            {% csrf_token %}
+            {{ form.as_p  }}
+            <button type = "submit" class = "btn btn-primary">Generate QR Code</button>
+        </form>
+    </div>
+    </body>
+{% endblock content %}

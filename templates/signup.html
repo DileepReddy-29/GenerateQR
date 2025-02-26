@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container mt-5" style="width: 400px;">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center">Sign Up</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_username">Username</label>
+                        <input type="text" name="username" class="form-control" id="id_username" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id_email">Email Id</label>
+                        <input type="email" name="email" class="form-control" id="id_email" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id_password">Password</label>
+                        <input type="password" name="password" class="form-control" id="id_confirmpassword" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label for="id_confirmpassword">Confirm Password</label>
+                        <input type="password" name="confirmpassword" class="form-control" id="id_confirmpassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
