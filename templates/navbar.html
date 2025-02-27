@@ -25,28 +25,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    {% comment %} {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Download</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signout' %}">Logout</a>
-                        </li>
-                    {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signin' %}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-                        </li>
-                    {% endif %} {% endcomment %}
-                    
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signin' %}">Login</a>
+                        <a class="nav-link" href="{% url 'qr_generator' %}">Generate QR</a>
                     </li>
-                    <li class="nav-item">
+                    {% comment %} <li class="nav-item">
                         <a class="nav-link" href="{% url 'signup' %}">Signup</a>
-                    </li>
+                    </li> {% endcomment %}
                 </ul>
             </div>
         </div>
